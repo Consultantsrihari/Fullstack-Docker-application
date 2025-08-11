@@ -1,0 +1,36 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # Backend Service (Node.js API)
+  backend:
+    build: ./backend
+    command: npm run dev
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://database:27017/mydatabase
+    depends_on:
+      - database
+    volumes:
+      - ./backend:/app # Mounts local 'backend' folder into container's '/app'
+      - /app/node_modules # Excludes local node_modules from being mounted
+
+  # Frontend Service (React + Nginx)
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80" # Map host port 3000 to container port 80 (Nginx default)
+    depends_on:
+      - backend
+
+  # Database Service (MongoDB)
+  database:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
