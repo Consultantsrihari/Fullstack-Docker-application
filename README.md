@@ -71,11 +71,17 @@ Follow these steps to get the application up and running.
 
 Replace `your-username` with your actual GitHub username.
 
-```bash
-git clone https://github.com/Consultantsrihari/fullstack-docker-application.git
-cd fullstack-docker-application
-docker-compose up --build
-docker-compose down
-docker-compose down -v
----
+* git clone https://github.com/Consultantsrihari/fullstack-docker-application.git
+* cd fullstack-docker-application
+* docker-compose up --build
+* docker-compose down
+* docker-compose down -v
+* This complete project https://techcareerhubs.com/step-by-step-guide-dockerize-node-js-react-mongodb-app/#more-8145
 
+## 👤 Author
+
+**VenkataSriHari**
+
+*   LinkedIn: [Venkata sri Hari](https://www.linkedin.com/in/venkatasrihari/)
+*   GitHub: `@Consultantsrihari`
+*   Website: [TechCareerHubs](https://techcareerhubs.com/).
